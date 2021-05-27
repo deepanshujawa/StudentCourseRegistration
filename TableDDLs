@@ -1,0 +1,19 @@
+
+#Student Table
+CREATE TABLE Student(
+student_id INT IDENTITY(1,1) PRIMARY KEY,
+name NVARCHAR(255)
+);
+
+
+#Course Table
+CREATE TABLE Course(
+course_id INT IDENTITY(1,1) PRIMARY KEY,
+name NVARCHAR(255)
+);
+
+#Registered Students Table
+CREATE TABLE registered_students(
+course_id INT FOREIGN KEY REFERENCES Course(course_id),
+student_id INT FOREIGN KEY REFERENCES Student(student_id)
+);
